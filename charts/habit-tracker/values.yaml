@@ -1,0 +1,17 @@
+image:
+  repository: yourdockeruser/habit-tracker
+  tag: "1.0.0"
+
+app:
+  replicas: 2
+
+postgres:
+  user: habituser
+  db: habitdb
+  passwordSecretName: postgres-secret
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 10
+  cpuUtilization: 50
+
