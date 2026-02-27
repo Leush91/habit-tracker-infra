@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: habit-tracker
 spec:
+  type: NodePort
   selector:
     app: habit-tracker
   ports:
