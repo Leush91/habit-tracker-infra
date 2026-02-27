@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: habit-tracker
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: habit-tracker
   ports:
     - port: 80
       targetPort: 8000
-      nodePort: 30007
