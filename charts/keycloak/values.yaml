@@ -14,3 +14,5 @@ ingress:
 
 postgresql:
   enabled: true
+  image:
+    tag: 16
