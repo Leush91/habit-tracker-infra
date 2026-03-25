@@ -1,0 +1,16 @@
+auth:
+  adminUser: admin
+  adminPassword: Leoadmin
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: auth.local
+  path: /
+  pathType: Prefix
+
+postgresql:
+  enabled: true
