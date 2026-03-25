@@ -12,6 +12,9 @@ spec:
     path: charts/keycloak
     repoURL: git@github.com:Leush91/habit-tracker-infra.git
     targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml  
   syncPolicy:
     automated:
       prune: true
