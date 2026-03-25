@@ -22,8 +22,12 @@ spec:
           hostname: auth.local
 
         postgresql:
-          image:
-            tag: 16
+          enabled: true
+          primary:
+            image:
+              registry: docker.io
+              repository: bitnami/postgresql
+              tag: 16
 
   destination:
     server: https://kubernetes.default.svc
