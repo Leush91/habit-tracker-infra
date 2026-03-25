@@ -4,17 +4,31 @@ metadata:
   name: keycloak
   namespace: argocd
 spec:
-  destination:
-    namespace: keycloak
-    server: https://kubernetes.default.svc
   project: default
+
   source:
-    path: charts/keycloak
-    repoURL: git@github.com:Leush91/habit-tracker-infra.git
-    targetRevision: main
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: keycloak
+    targetRevision: 22.1.3
     helm:
-      valueFiles:
-        - values.yaml  
+      values: |
+        auth:
+          adminUser: leo
+          adminPassword: admin
+
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          hostname: auth.local
+        postgresql:
+          image:
+            registry: docker.io
+            repository: bitnami/postgresql
+            tag: 16   
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: keycloak
+
   syncPolicy:
     automated:
       prune: true
