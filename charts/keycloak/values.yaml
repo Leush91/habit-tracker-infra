@@ -13,7 +13,7 @@ ingress:
   pathType: Prefix
 
 postgresql:
-  enabled: true
+  enabled: false
   primary:
     image:
     registry: docker.io
