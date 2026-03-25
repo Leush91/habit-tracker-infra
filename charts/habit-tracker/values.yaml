@@ -2,7 +2,7 @@ image:
   repository: leush91/habit-tracker
   tag: "039bf88"
 app:
-  replicas: 3
+  replicas: 2
 postgres:
   user: habituser
   db: habitdb
