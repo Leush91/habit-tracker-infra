@@ -22,12 +22,15 @@ spec:
           hostname: auth.local
 
         postgresql:
-          enabled: true
-          primary:
-            image:
-              registry: docker.io
-              repository: bitnami/postgresql
-              tag: 16
+          enabled: false
+
+        externalDatabase:
+          host: ""
+        
+        extraEnvVars:
+          - name: KC_DB
+            value: dev-mem
+          
 
   destination:
     server: https://kubernetes.default.svc
