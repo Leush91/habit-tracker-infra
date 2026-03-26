@@ -16,7 +16,7 @@ spec:
           adminUser: leo
           adminPassword: admin
 
-        proxy: edge
+        proxyHeaders: xforwarded
         production: true
 
         ingress:
