@@ -15,8 +15,12 @@ spec:
           adminUser: leo
           adminPassword: admin
 
-        production: true
-        proxyHeaders: xforwarded
+        production: false
+
+        image:
+          registry: docker.io
+          repository: bitnamilegacy/keycloak
+          tag: 26.3.3-debian-12-r0
 
         ingress:
           enabled: true
@@ -27,13 +31,19 @@ spec:
 
         postgresql:
           enabled: true
+          image:
+            registry: docker.io
+            repository: bitnamilegacy/postgresql
+            tag: 17.6.0-debian-12-r4
           auth:
             username: bn_keycloak
             password: bn_keycloak_password
             database: bitnami_keycloak
+
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
+
   syncPolicy:
     automated:
       prune: true
