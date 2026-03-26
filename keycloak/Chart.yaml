@@ -1,0 +1,10 @@
+apiVersion: v2
+name: keycloak-bootstrap
+description: Keycloak deployment for habit-tracker cluster
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: keycloak
+    version: 24.4.11
+    repository: https://charts.bitnami.com/bitnami

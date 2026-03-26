@@ -1,0 +1,25 @@
+keycloak:
+  auth:
+    adminUser: admin
+    adminPassword: admin123456
+
+  proxy: edge
+
+  production: true
+
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hostname: auth.local
+    path: /
+    pathType: Prefix
+
+  postgresql:
+    enabled: true
+    auth:
+      username: bn_keycloak
+      password: bn_keycloak_password
+      database: bitnami_keycloak
+
+  externalDatabase:
+    host: ""
