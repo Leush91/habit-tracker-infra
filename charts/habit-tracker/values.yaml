@@ -1,6 +1,6 @@
 image:
   repository: leush91/habit-tracker
-  tag: "039bf88"
+  tag: "612844a"
 app:
   replicas: 2
 postgres:
