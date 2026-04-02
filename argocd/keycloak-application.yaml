@@ -29,6 +29,16 @@ spec:
           path: /
           pathType: Prefix
 
+        extraEnvVars:
+          - name: KC_HOSTNAME
+            value: "https://auth.local"
+          - name: KC_PROXY_HEADERS
+            value: "xforwarded"
+          - name: KC_HTTP_ENABLED
+            value: "true"
+          - name: KC_HOSTNAME_STRICT
+            value: "false"
+
         postgresql:
           enabled: true
           image:
@@ -39,7 +49,6 @@ spec:
             username: bn_keycloak
             password: bn_keycloak_password
             database: bitnami_keycloak
-
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
