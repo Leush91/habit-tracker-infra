@@ -45,7 +45,10 @@ fluent-bit:
           TLS Off
           TLS.Verify Off
           Splunk_Token REPLACE_WITH_YOUR_REAL_HEC_TOKEN
-          Splunk_Send_Raw On
+          Splunk_Send_Raw Off
+          Splunk_Source fluent-bit
+          Splunk_Sourcetype habit-tracker-json
+          Splunk_Index main
           compress gzip
 
   daemonSetVolumes:
