@@ -42,7 +42,7 @@ fluent-bit:
           Match kube.*
           Host splunk
           Port 8088
-          TLS Off
+          TLS On
           TLS.Verify Off
           Splunk_Token e07d27be-425b-4357-bf69-ca7f17bcb7ef
           Splunk_Send_Raw Off
