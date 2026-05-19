@@ -13,7 +13,7 @@ fluent-bit:
     inputs: |
       [INPUT]
           Name tail
-          Path /var/log/containers/*.log
+          Path /var/log/containers/*_app_*.log
           multiline.parser docker, cri
           Tag kube.*
           Mem_Buf_Limit 50MB
