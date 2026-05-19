@@ -40,7 +40,7 @@ fluent-bit:
       [OUTPUT]
           Name splunk
           Match kube.*
-          Host 172.18.0.1
+          Host splunk
           Port 8088
           TLS Off
           TLS.Verify Off
