@@ -1,4 +1,11 @@
 fluent-bit:
+  env:
+    - name: SPLUNK_HEC_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: splunk-hec-secret
+          key: SPLUNK_HEC_TOKEN
+
   config:
     service: |
       [SERVICE]
@@ -10,13 +17,6 @@ fluent-bit:
           HTTP_Listen 0.0.0.0
           HTTP_Port 2020
 
-  env:
-  - name: SPLUNK_HEC_TOKEN
-    valueFrom:
-      secretKeyRef:
-        name: splunk-hec-secret
-        key: SPLUNK_HEC_TOKEN  
-  
     inputs: |
       [INPUT]
           Name tail
